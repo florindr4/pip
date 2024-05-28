@@ -25,12 +25,11 @@ import javax.swing.filechooser.FileNameExtensionFilter;
  */
 public class GUI {
 
-	private static JFrame frame; // The Graphical User Interface window
-	private JTextField pathOriginal; // The path to the original project
-	private JTextField pathDatabase; // The Path to the Excel Database
-	private JTextField pathSuspect; // The path to the suspicious project
-	String rezultat_global; // Here we store the percentage result of the plagiarism test
-	// Previous imports and class definition...
+	private static JFrame frame; /**The Graphical User Interface window*/ 
+	private JTextField pathOriginal; /**The path to the original project*/ 
+	private JTextField pathDatabase; /**The Path to the Excel Database*/ 
+	private JTextField pathSuspect; /**The path to the suspicious project*/ 
+	String rezultat_global; /**Here we store the percentage result of the plagiarism test*/ 
 
 	/**
 	 * Launches the application.
