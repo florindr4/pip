@@ -32,8 +32,8 @@ public class DatabaseHandler {
     public static void updateDatabase(String filePath, String originalProject, String suspectProject, String rezultatGlobal) {
         try (FileInputStream inputStream = new FileInputStream(filePath);
              Workbook workbook = WorkbookFactory.create(inputStream)) {
-
-            // Access the specific sheet within the workbook
+            
+            /**Access the specific sheet within the workbook*/
             Sheet sheet = workbook.getSheetAt(0);
 
             int nextRow = sheet.getLastRowNum() + 2;
@@ -43,14 +43,14 @@ public class DatabaseHandler {
             newRow.createCell(2).setCellValue(PlagiarismDetector.prelucrareNume(suspectProject));
             newRow.createCell(4).setCellValue(rezultatGlobal);
 
-            // Add date and time cell
+            /**Add date and time cell*/
             ZoneId zoneId = ZoneId.of("Europe/Bucharest");
             LocalDateTime currentDateTime = LocalDateTime.now(zoneId);
             DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss");
             String formattedDateTime = currentDateTime.format(formatter);
             newRow.createCell(6).setCellValue(formattedDateTime);
 
-            // Set cell style based on plagiarism percentage
+            /**Set cell style based on plagiarism percentage*/
             double doubleValue = Double.parseDouble(rezultatGlobal.replace(",", "."));
             CellStyle cellStyle = workbook.createCellStyle();
             if (doubleValue >= 40.00) {
@@ -62,7 +62,7 @@ public class DatabaseHandler {
             Cell cell = newRow.createCell(9);
             cell.setCellStyle(cellStyle);
 
-            // Save the workbook back to the file
+            /**Save the workbook back to the file*/
             try (FileOutputStream outputStream = new FileOutputStream(filePath)) {
                 workbook.write(outputStream);
             }
