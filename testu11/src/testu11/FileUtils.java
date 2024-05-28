@@ -40,14 +40,14 @@ public class FileUtils {
                 .forEach(new Consumer<Path>() {
                     public void accept(Path file) {
                         try {
-                            // Read content of the file
+                            /**Read content of the file*/ 
                             byte[] cod = Files.readAllBytes(file);
                             String fileContent = new String(cod);
 
-                            // Split the string into words using whitespace as delimiter
+                            /**Split the string into words using whitespace as delimiter*/ 
                             String[] wordsArray = fileContent.split("\\s+");
 
-                            // Add words to the list
+                            /**Add words to the list*/
                             for (String word : wordsArray) {
                                 wordsList.add(word);
                             }
