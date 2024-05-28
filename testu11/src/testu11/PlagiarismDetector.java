@@ -30,7 +30,7 @@ public class PlagiarismDetector {
 	        return 0;
 	    }
 
-	    // Check if the two word lists are identical
+	    /**Check if the two word lists are identical*/ 
 	    if (wordsList1.equals(wordsList2)) {
 	        return 100.0;
 	    }
