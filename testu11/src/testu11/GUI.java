@@ -50,8 +50,6 @@ public class GUI {
 	    });
 	}
 
-	// Other methods and components...
-
 
 	/**
 	 * Constructor for GUI class.
@@ -194,20 +192,20 @@ public class GUI {
 
 		            if (originalCode != null && suspectCode != null) {
 		                rezultat_global = Double.toString(PlagiarismDetector.procesare(originalCode, suspectCode));
-		                // Replace commas with periods in the result string
+		                /**Replace commas with periods in the result string*/ 
 		                rezultat_global = rezultat_global.replace(',', '.');
-		                // Use the result as needed
+		                /**Use the result as needed*/ 
 		            } else {
-		                // Handle the case where one or both lists are null
+		                /**Handle the case where one or both lists are null*/ 
 		                System.out.println("One or both word lists are null");
 		            }
 		        } catch (IOException e1) {
-		            // Handle the IOException appropriately
+		            /**Handle the IOException appropriately*/ 
 		            e1.printStackTrace();
 		        }
 
 		        if (rezultat_global == null) {
-		            // Assign a default value if rezultat_global is still null
+		            /**Assign a default value if rezultat_global is still null*/ 
 		            rezultat_global = "0.00";
 		        }
 
@@ -243,7 +241,6 @@ public class GUI {
 	}
 
 	protected List<String> obtinereCod(String text) {
-		// TODO Auto-generated method stub
 		return null;
 	}
 }
